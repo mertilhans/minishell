@@ -18,7 +18,9 @@ char	*heredoc_readline(const char *prompt)
 	ssize_t			bytes_read;
 	char			ch;
 	int				status;
-
+	
+	if (get_last_exit_status() == 130)
+		set_last_exit_status(0);
 	if (prompt)
 		write(STDOUT_FILENO, prompt, strlen(prompt));
 	st.line = NULL;
