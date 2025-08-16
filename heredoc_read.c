@@ -22,7 +22,7 @@ char	*heredoc_readline(const char *prompt)
 	if (get_last_exit_status() == 130)
 		set_last_exit_status(0);
 	if (prompt)
-		write(STDOUT_FILENO, prompt, strlen(prompt));
+		write(STDOUT_FILENO, prompt, ft_strlen(prompt));
 	st.line = NULL;
 	st.len = 0;
 	st.at_line_start = 1;
